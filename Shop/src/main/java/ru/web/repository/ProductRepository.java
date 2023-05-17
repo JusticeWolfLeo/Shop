@@ -9,20 +9,20 @@ import ru.web.entity.Product;
 
 import java.util.List;
 
-    @Repository
-    public class ProductRepository {
+@Repository
+public class ProductRepository {
 
-        @Autowired
-        private SessionFactory sessionFactory;
+  @Autowired
+  private SessionFactory sessionFactory;
 
-        public void saveProduct(Product product) {
-            Session session = sessionFactory.getCurrentSession();
-            session.save(product);
-        }
+  public void saveProduct(Product product) {
+    Session session = sessionFactory.getCurrentSession();
+    session.save(product);
+  }
 
-        public List<Product> getAllProducts() {
-            Session session = sessionFactory.getCurrentSession();
-            Query<Product> query = session.createQuery("FROM Product", Product.class);
-            return query.getResultList();
-        }
-    }
+  public List<Product> getAllProducts() {
+    Session session = sessionFactory.getCurrentSession();
+    Query<Product> query = session.createQuery("from Product");
+    return query.getResultList();
+  }
+}

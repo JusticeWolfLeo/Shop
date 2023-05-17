@@ -1,4 +1,4 @@
-package org.example;
+package ru.web;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.web.config.AppConfig;

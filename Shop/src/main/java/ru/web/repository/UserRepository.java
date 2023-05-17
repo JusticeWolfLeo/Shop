@@ -20,7 +20,7 @@ public class UserRepository {
 
     public User findByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
-        Query<User> query = session.createQuery("FROM User WHERE email = :email", User.class);
+        Query<User> query = session.createQuery("from User WHERE email = :email");
         query.setParameter("email", email);
         return query.uniqueResult();
     }
